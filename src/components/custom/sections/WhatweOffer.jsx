@@ -8,6 +8,7 @@ const WhatweOffer = () => {
             <div className="highlight">Exclusive Features</div>
             <h2>What We Offer</h2>
             <p>We deliver innovative media and IT solutions designed to elevate your brand, enhance performance, and drive lasting growth.</p>
+            <h6>Hello</h6>
             <div className="card_wrapper flex gap-[20px]">
                 <Card
                     title="Digital Solutions"
@@ -27,7 +28,7 @@ const WhatweOffer = () => {
                     image="/Automation with AI.svg"
                 />
             </div>
-            <Button>View All Servicesh</Button>
+            <Button variant='pinky' className={"w-max m-auto"}>View All Services</Button>
 
         </div>
     )

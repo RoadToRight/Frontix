@@ -50,7 +50,7 @@
 :root {
   --radius: 0.625rem;
   --background: #090014;
-  --foreground: oklch(0.145 0 0);
+  --foreground: oklch(100% 0.00011 271.152);
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.145 0 0);
   --popover: oklch(1 0 0);
@@ -137,10 +137,57 @@
 /* * {
   font-family: "SuisseIntl", sans-serif;
 } */
-h1 {
+h1,
+h2 {
   font-family: "SuisseIntl", sans-serif;
+  background: linear-gradient(90deg, #6606E0 0%, #FFFFFF 50%, #6E15DF 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
 }
 
+h2 {
+  font-size: 66px;
+  background-size: 500px !important;
+
+}
+@property --angle{
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+h6{
+  position: relative;
+  width: max-content;
+  background-color: black !important;
+  width: 300px;
+  padding: 12px;
+}
+h6::after ,h6::before{
+  --angle:0deg;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: conic-gradient(from var(--angle),#6606E0 0%, #FFFFFF 50%, #6E15DF 100%);
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  z-index: -1;
+  padding: 2px;
+  border-radius: 10px;
+  animation: 3s spin linear infinite;
+}
+
+@keyframes spin{
+  from{
+    --angle:0deg;
+  }
+  to{
+    --angle:360deg;
+  }
+}
 li,
 p {
   --font-sans: var(--font-roboto);
